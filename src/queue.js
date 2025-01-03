@@ -35,8 +35,9 @@ class Queue {
   }
 
   dequeue() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    let node = this.head;
+    this.head = this.head.next;
+    return node.value;
   }
 }
 
