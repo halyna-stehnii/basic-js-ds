@@ -17,9 +17,8 @@ class Stack {
     this.elements = [];
   }
 
-  push(/* element */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  push(element) {
+    this.elements.push(element);
   }
 
   pop() {
