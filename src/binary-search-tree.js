@@ -25,7 +25,7 @@ class BinarySearchTree {
   }
 
   addNode(bstRoot, node) {
-    if (node.data < this.bstRoot.data) {
+    if (node.data < bstRoot.data) {
       if (bstRoot.left === null) {
         bstRoot.left = node;
       } else {
@@ -40,9 +40,25 @@ class BinarySearchTree {
     }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  has(data) {
+    return this.hasNode(this.bstRoot, data);
+  }
+
+  hasNode(node, data) {
+    if (node === null) {
+      return false;
+    }
+    if (node.data === data) {
+      console.debug(node.data);
+      return true;
+    }
+    if (data < node.data) {
+      console.debug(node.data);
+      return this.hasNode(node.left, data);
+    } else {
+      console.debug(node.data);
+      return this.hasNode(node.right, data);
+    }
   }
 
   find(/* data */) {
